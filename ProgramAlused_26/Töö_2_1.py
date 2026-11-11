@@ -72,3 +72,41 @@ if remont.lower() == "jah":
         print(f"Remondi koguhind koos tööga on {round(koguhind,2)} eurot.")
 else:
     print("Remonti ei tehta.")
+
+# 4. Allahindlus
+# Küsi toote alghind. Kui alghind on üle 700 euro, arvuta hind 30% soodustusega. 
+# Muul juhul jääb hind samaks. Kuva lõplik hind kahe komakohaga.
+try:
+    alghind=float(input("Sisesta toote alghind eurodes: "))
+    if alghind > 700:
+        hind=alghind*0.7
+    else:
+        hind=alghind
+    print(f"Lõplik hind on {round(hind,2)} eurot.")
+except ValueError:
+    print("Palun sisesta hind numbrina.")
+# 5. Temperatuur
+# Küsi toatemperatuur ja teata, kas see on üle 18 kraadi (soovitatav toasoojus talvel). 
+# Temperatuur võib olla ka negatiivne või kümnendarv, 
+# seega kontrolli sisendit try/except abil.
+try:
+    temperatuur=float(input("Sisesta toatemperatuur kraadides: "))
+    if temperatuur > 18:
+        print("Toatemperatuur on üle 18 kraadi.")
+    else:
+        print("Toatemperatuur on 18 kraadi või madalam.")
+except ValueError:
+    print("Palun sisesta temperatuur numbrina.")
+# 6. Pikkus
+# Küsi inimese pikkus sentimeetrites ja teata, kas ta on lühike, keskmise pikkusega või pikk. 
+# Piirid pane ise paika ja kirjuta need programmi alguses kommentaarina.
+try:
+    pikkus = float(input("Sisesta inimese pikkus sentimeetrites: "))
+    if pikkus < 160:
+        print("Inimene on lühike.")
+    elif 160 <= pikkus <= 180:
+        print("Inimene on keskmise pikkusega.")
+    else:
+        print("Inimene on pikk.")
+except ValueError:
+    print("Palun sisesta pikkus numbrina.")
