@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>c1ef98a3-177b-4a17-8a96-16628f69b981</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Too_1_3.py</StartupFile>
+    <StartupFile>Teema2_Valikud.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,7 +21,8 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="ProgramAlused_26.py" />
+    <Compile Include="Teema1_Lin_programmid.py" />
+    <Compile Include="Teema2_Valikud.py" />
     <Compile Include="Too_1_1.py" />
     <Compile Include="Too_1_3.py" />
   </ItemGroup>
