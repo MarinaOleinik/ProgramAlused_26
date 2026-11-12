@@ -18,12 +18,13 @@ if eesnimi.lower() == "juku":
             pilet="tasutapilet"
         elif 6 <= vanus <= 14:
             pilet="lastepilet"
-        elif 15 < vanus < 65:
+        elif 14 < vanus < 65:
             pilet="täispilet"
         elif vanus >= 65:
             pilet="sooduspilet"
         else:
             print("Viga andmetes.")
+        #paranda siin koodi, et vanus oleks numbrina ja piletit kuvatakse ainult siis, kui vanus on korrektne.
         print(f"Juku vanus on {vanus} aastat, seega on vaja osta {pilet}.")
     else:
         print("Palun sisesta vanus numbrina.")
