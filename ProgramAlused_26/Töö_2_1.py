@@ -101,13 +101,60 @@ except ValueError:
 # 6. Pikkus
 # Küsi inimese pikkus sentimeetrites ja teata, kas ta on lühike, keskmise pikkusega või pikk. 
 # Piirid pane ise paika ja kirjuta need programmi alguses kommentaarina.
+#
 try:
     pikkus = float(input("Sisesta inimese pikkus sentimeetrites: "))
-    if pikkus < 160:
+    if 30<=pikkus < 160:
         print("Inimene on lühike.")
     elif 160 <= pikkus <= 180:
         print("Inimene on keskmise pikkusega.")
+    elif 180<pikkus<=220:
+        print("Inimene on pikk")
     else:
-        print("Inimene on pikk.")
+        print("Arv ei soobi")
 except ValueError:
-    print("Palun sisesta pikkus numbrina.")
+    print("Viga: Palun sisesta pikkus numbrina.")
+
+# 7. Pikkus ja sugu
+# Täienda ülesannet 6: küsi lisaks sugu. Meestele ja naistele kehtivad erinevad piirid. Tingimusplokid võivad olla üksteise sees.
+# Sugu võib sisestada mis tahes kujul (M, m, mees, MEES). Programm peab selle ära tundma.
+# Kui sugu on sisestatud valesti, kuva veateade.
+# Kasuta: pesastatud if-laused, lower()
+
+sugu=input("Sugu: ")
+if sugu.isalpha():
+    if sugu.lower()=="m" or sugu.upper()=="MEES":
+        print("Mehe pikkuse analüüs")
+        # kirjuta ise
+    else:
+        print("Naise pikkuse analüüs")
+        # kirjuta ise
+else:
+    print("Viga: kirjuta tähtedega")
+
+# 8. Poes
+# Küsi kasutajalt iga toote kohta eraldi, kas ta soovib seda osta: piim, sai, leib ja vähemalt kaks toodet veel.
+
+# Toodete hinnad loo juhuslikult moodulist random, näiteks round(random.uniform(0.5, 3), 2).
+# Kui kasutaja soovib toodet osta, küsi kogus. Kontrolli, et kogus on täisarv (isdigit()).
+# Lõpus kuva tšekk: iga ostetud toote nimi, kogus, hind ja summa ning kõige all kogusumma.
+from random import *
+summa=0
+arve="Toode    Kogus    Hind     Kokku\n"
+valik=input("Kas soovid osta piima? (jah/ei)")
+if valik.lower()=="jah":
+    kogus=input("Mitu piima soovid osta (int): ")
+    if kogus.isdigit():
+        kogus=int(kogus)
+        p_hind=round(uniform(0.5,3.6),2)
+        print(f"piima hind on {p_hind}€")
+        summa+=round(kogus*p_hind,2)
+        print(f"piima kogusumm on {summa}€")
+        arve+=f"piim    {kogus}    {p_hind}€    {round(kogus*p_hind,2)}€\n"
+    else:
+        print("Viga: ....")
+else:
+    print("Selge: piima ei taha")
+
+print(" Arve Nr. 123456789")
+print(arve)
